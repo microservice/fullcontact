@@ -3,5 +3,5 @@
 
 ```sh
 # usage.story
-handler = fullcontact email twitter
+handler = fullcontact {{email}} twitter
 ```
