@@ -1,0 +1,14 @@
+commands:
+  email:
+    help: |
+      Search FullContact using an email address
+    args:
+      - name: query
+        type: string
+
+volume: false
+
+env:
+  API_KEY:
+  USER_AGENT:
+    default: 'asyncy/unknown'
