@@ -1,8 +1,6 @@
-FROM          alpine:3.7
+FROM          jfloff/alpine-python
 
-ADD           install.sh /install.sh
-ADD           entrypoint.sh /entrypoint.sh
-ADD           fullcontact.py /fullcontact.py
-RUN           /install.sh && rm -f /install.sh
+RUN           pip install requests
+ADD           app.py /app.py
 
-ENTRYPOINT   ["/entrypoint.sh"]
+ENTRYPOINT   ["python", "/app.py"]

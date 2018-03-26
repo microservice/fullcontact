@@ -1,14 +1,21 @@
 commands:
-  email:
-    help: |
-      Search FullContact using an email address
-    args:
-      - name: query
+  person:
+    help: Search for a person
+    kwargs:
+      - name: email
         type: string
-
-volume: false
+      - name: twitter
+        type: string
+      - name: phone
+        type: string
+  company:
+    help: Search for a company
+    args:
+      - name: domain
+        type: string
+        required: true
 
 env:
   API_KEY:
   USER_AGENT:
-    default: 'asyncy/unknown'
+    default: Asyncy
