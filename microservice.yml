@@ -1,7 +1,7 @@
 commands:
   person:
     help: Search for a person
-    kwargs:
+    arguments:
       - name: email
         type: string
       - name: twitter
@@ -10,12 +10,12 @@ commands:
         type: string
   company:
     help: Search for a company
-    args:
+    arguments:
       - name: domain
         type: string
         required: true
 
-env:
+environment:
   API_KEY:
   USER_AGENT:
     default: Asyncy

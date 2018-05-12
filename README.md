@@ -1,12 +1,12 @@
-# FullContact for Asyncy
+# FullContact
 
 ## Query a person
 
 > https://docs.fullcontact.com/api/#person-enrichment
 
 ```sh
-# usage.story
-data = fullcontact person --email "bart@fullcontact.com"
+# Storyscript
+data = fullcontact person email:"bart@fullcontact.com"
 ```
 
 ```js
@@ -25,8 +25,8 @@ data = {
 > https://docs.fullcontact.com/api/#company-enrichment
 
 ```sh
-# usage.story
-data = fullcontact company fullcontact.com
+# Storyscript
+data = fullcontact company domain:'fullcontact.com'
 ```
 
 ```js
