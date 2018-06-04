@@ -2,20 +2,22 @@ commands:
   person:
     help: Search for a person
     arguments:
-      - name: email
+      email:
         type: string
-      - name: twitter
+      twitter:
         type: string
-      - name: phone
+      phone:
         type: string
   company:
     help: Search for a company
     arguments:
-      - name: domain
+      domain:
         type: string
         required: true
 
 environment:
   API_KEY:
+    type: string
   USER_AGENT:
+    type: string
     default: Asyncy
