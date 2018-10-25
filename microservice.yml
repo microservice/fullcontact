@@ -1,4 +1,5 @@
-commands:
+omg: 1
+actions:
   person:
     help: Search for a person
     arguments:
