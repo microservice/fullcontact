@@ -1,5 +1,8 @@
 # FullContact
 
+![Microservice](https://img.shields.io/badge/microservice-ready-brightgreen.svg?style=for-the-badge)
+[![Docker Build Status](https://img.shields.io/docker/build/microservices/fullcontact.svg?style=for-the-badge)](https://hub.docker.com/r/microservice/fullcontact/)
+
 ## Query a person
 
 > https://docs.fullcontact.com/api/#person-enrichment
