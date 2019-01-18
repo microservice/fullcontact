@@ -1,24 +1,51 @@
 omg: 1
+lifecycle:
+  startup:
+    command: ["python", "/app/app.py"]
 actions:
   person:
     help: Search for a person
     arguments:
       email:
         type: string
+        in: requestBody
       twitter:
         type: string
+        in: requestBody
       phone:
         type: string
+        in: requestBody
+    http:
+      path: /person
+      method: post
+      port: 8000
+      contentType: application/json
+    output:
+      type: map
+
   company:
     help: Search for a company
     arguments:
       domain:
         type: string
         required: true
+        in: requestBody
+    http:
+      path: /company
+      method: post
+      port: 8000
+      contentType: application/json
+    output:
+      type: map
 
 environment:
   API_KEY:
+    help: |
+      Get from https://dashboard.fullcontact.com/
     type: string
+    pattern: "(\\w\\d){32}"
   USER_AGENT:
+    help: |
+      When making http requests the user agent is required.
     type: string
-    default: Asyncy
+    default: Undefined

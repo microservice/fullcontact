@@ -2,23 +2,19 @@
 
 import os
 import sys
-import json
 import requests
+from flask import Flask, request
 
 
-def main(endpoint, args):
-    if args[0].startswith('--'):
-        query = dict(zip(map(lambda a: a[2:], args[::2]), args[1::2]))
-    else:
-        query = {
-            'domain': args[0]
-        }
+app = Flask(__name__)
 
+
+def api(endpoint, query):
     res = requests.post(
-        'https://api.fullcontact.com/v3/%s.enrich' % endpoint,
-        data=json.dumps(query),
+        f'https://api.fullcontact.com/v3/{endpoint}.enrich',
+        data=query,
         headers={
-            'Authorization': 'Bearer %s' % os.getenv('API_KEY'),
+            'Authorization': f'Bearer {os.getenv("API_KEY")}',
             'User-Agent': os.getenv('USER_AGENT')
         }
     )
@@ -32,5 +28,15 @@ def main(endpoint, args):
         return res.text
 
 
+@app.route('/person', methods=['POST'])
+def person():
+    return api('person', request.data)
+
+
+@app.route('/company', methods=['POST'])
+def company():
+    return api('company', request.data)
+
+
 if __name__ == '__main__':
-    sys.stdout.write(main(sys.argv[1], sys.argv[2:]))
+    app.run(host='0.0.0.0', port=8000)
