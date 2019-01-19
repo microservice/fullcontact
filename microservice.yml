@@ -43,7 +43,7 @@ environment:
     help: |
       Get from https://dashboard.fullcontact.com/
     type: string
-    pattern: "(\\w\\d){32}"
+    pattern: "[\\w\\d]{32}"
   USER_AGENT:
     help: |
       When making http requests the user agent is required.
