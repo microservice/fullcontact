@@ -25,6 +25,10 @@ def api(endpoint, query):
         sys.stderr.write(res.text)
         raise
     else:
+        # https://docs.fullcontact.com/#rate-limiting
+        # TODO res.headers['X-Rate-Limit']
+        # TODO res.headers['X-Rate-Limit-Remaining']
+        # TODO res.headers['X-Rate-Limit-Reset']
         return res.text
 
 
