@@ -21,6 +21,7 @@ actions:
       port: 8000
       contentType: application/json
     output:
+      contentType: application/json
       type: map
 
   company:
@@ -36,6 +37,7 @@ actions:
       port: 8000
       contentType: application/json
     output:
+      contentType: application/json
       type: map
 
 environment:
