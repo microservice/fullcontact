@@ -1,17 +1,16 @@
-# FullContact
+# _FullContact_ OMG Microservice
 
-![Microservice](https://img.shields.io/badge/microservice-ready-brightgreen.svg?style=for-the-badge)
-[![Docker Build Status](https://img.shields.io/docker/build/microservices/fullcontact.svg?style=for-the-badge)](https://hub.docker.com/r/microservice/fullcontact/)
+[![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
+<!-- [![Docker Build Status](https://img.shields.io/docker/build/microservices/fullcontact.svg?style=for-the-badge)](https://hub.docker.com/r/microservice/fullcontact/) -->
 
-## Query a person
+FullContact is a contact management software designed for individuals and teams. It has the capability to collect contact data and information of companies, enterprises, and professionals; and organizes them into a centralized location.
 
-> https://docs.fullcontact.com/api/#person-enrichment
+## Direct usage in [Storyscript](https://storyscript.io/):
 
-```sh
-# Storyscript
+##### Query a person
+```coffee
 data = fullcontact person email:"bart@fullcontact.com"
 ```
-
 ```js
 data = {
   "email": "bart@fullcontact.com",
@@ -23,15 +22,10 @@ data = {
 }
 ```
 
-## Query a company
-
-> https://docs.fullcontact.com/api/#company-enrichment
-
-```sh
-# Storyscript
+##### Query a company
+```coffee
 data = fullcontact company domain:'fullcontact.com'
 ```
-
 ```js
 data = {
   "name": "FullContact, Inc.",
@@ -42,3 +36,23 @@ data = {
   "bio": "FullContact is the ... contacts and be awesome with people.",
   ...
 ```
+
+Curious to [learn more](https://docs.storyscript.io/)?
+
+✨🍰✨
+
+## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
+
+##### Query a person
+```shell
+$ omg run person -a email=<EMAIL_ADDRESS> -a twitter=<TWITTER> -a phone=<PHONE_NUMBER> -e API_KEY=<API_KEY> -e USER_AGENT=<USER_AGENT>
+```
+##### Query a company
+```shell
+$ omg run company -a domain=<DOMAIN> -e API_KEY=<API_KEY> -e USER_AGENT=<USER_AGENT>
+```
+
+**Note**: The OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
+
+## License
+[MIT License](https://github.com/omg-services/fullcontact/blob/master/LICENSE).
