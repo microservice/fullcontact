@@ -2,6 +2,10 @@ omg: 1
 lifecycle:
   startup:
     command: ["python", "/app/app.py"]
+info:
+  version: 1.0.0
+  title: FullContact
+  description: This is a fullcontact service
 actions:
   person:
     help: Search for a person
