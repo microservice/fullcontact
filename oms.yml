@@ -1,11 +1,17 @@
-omg: 1
-lifecycle:
-  startup:
-    command: ["python", "/app/app.py"]
+oms: 1
 info:
   version: 1.0.0
   title: FullContact
   description: This is a fullcontact service
+  contact:
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
+lifecycle:
+  startup:
+    command:
+      - python
+      - /app/app.py
 actions:
   person:
     help: Search for a person
@@ -27,7 +33,6 @@ actions:
     output:
       contentType: application/json
       type: map
-
   company:
     help: Search for a company
     arguments:
@@ -43,13 +48,12 @@ actions:
     output:
       contentType: application/json
       type: map
-
 environment:
   API_KEY:
     help: |
       Get from https://dashboard.fullcontact.com/
     type: string
-    pattern: "[\\w\\d]{32}"
+    pattern: '[\w\d]{32}'
   USER_AGENT:
     help: |
       When making http requests the user agent is required.
